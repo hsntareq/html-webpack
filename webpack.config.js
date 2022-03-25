@@ -12,6 +12,7 @@ const config = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
+    filename: 'assets/js/bundle.js',
   },
   devServer: {
     open: true,
@@ -22,7 +23,9 @@ const config = {
       template: "index.html",
     }),
 
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "./assets/css/[name].css",
+    }),
 
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
